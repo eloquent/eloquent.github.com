@@ -58,6 +58,11 @@ p + p {
     padding-right: 10px;
 }
 
+/* navs direct in body */
+body > .container > .nav > li > a {
+    background-color: #fff;
+}
+
 /* hero unit */
 .hero-unit {
     background-color: #ddd;
@@ -65,13 +70,19 @@ p + p {
 
 /* project */
 .project h2 {
-    line-height: 0.8em;
+    line-height: 1em;
     margin-top: 1.4em;
     padding-bottom: 8px;
     border-bottom: 1px solid #ccc;
 }
 .project h2 a {
     line-height: 1em;
+}
+@media (max-width: 480px) {
+    .project h2 small {
+        display: block;
+        margin-top: 10px;
+    }
 }
 .project .btn-group {
     margin-left: 10px;
