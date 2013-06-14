@@ -67,8 +67,11 @@ p + p {
 .project h2 {
     line-height: 0.8em;
     margin-top: 1.4em;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 1px solid #ccc;
+}
+.project h2 a {
+    line-height: 1em;
 }
 .project .btn-group {
     margin-left: 10px;
