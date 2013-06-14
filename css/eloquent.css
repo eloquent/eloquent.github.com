@@ -6,7 +6,6 @@ html, html a {
 
 /* body spacing/background */
 body {
-    min-width: 480px;
     padding-top: 30px;
     padding-bottom: 30px;
     background-image: url(/img/pw_maze_white.png);
