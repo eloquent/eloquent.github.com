@@ -102,11 +102,12 @@ body > .container > .nav > li > a {
 
 /* footer */
 #footer {
-    margin-top: 80px;
+    clear: both;
+    padding-top: 80px;
 }
 @media (max-width: 767px) {
     #footer {
-        margin-top: 40px;
+        padding-top: 40px;
     }
 }
 
