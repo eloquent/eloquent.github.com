@@ -1,0 +1,49 @@
+/* body background */
+body {
+    background-image: url(/img/pw_maze_white.png);
+    background-color: #eee;
+}
+
+/* headers */
+.page-header {
+    border-bottom-color: #ccc;
+}
+
+/* brand */
+.navbar .navbar-brand {
+    letter-spacing: 0.1em;
+}
+.navbar .navbar-brand .muted {
+    color: inherit;
+    transition: color 1s ease-in-out;
+    -moz-transition: color 1s ease-in-out;
+    -webkit-transition: color 1s ease-in-out;
+}
+.navbar .navbar-brand:hover .muted {
+    color: #ccc;
+}
+
+/* jumbotron */
+.jumbotron {
+    background-color: #ddd;
+}
+
+/* project */
+.project h2 {
+    line-height: 1em;
+    margin-top: 1.4em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
+.project h2 a {
+    line-height: 1em;
+}
+@media (max-width: 767px) {
+    .project h2 small {
+        display: block;
+        margin-top: 10px;
+    }
+}
+.project .btn-group {
+    margin-left: 10px;
+}

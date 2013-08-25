@@ -6,9 +6,10 @@
 
         <title>Eloquent - Eloquent Software</title>
 
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
         <link href="/css/eloquent.css" rel="stylesheet">
+        <link href="/css/site.css" rel="stylesheet">
 
         <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
@@ -29,27 +30,34 @@
         </script>
 
         <div class="container">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <a class="brand" href="/"><span class="muted">e</span>l<span class="muted">o</span>q<span class="muted">ue</span>nt.</a>
-                    <ul class="nav hidden-phone">
-                        <li><a href="/">Projects</a></li>
-                        <li class="active"><a href="/about.html">About</a></li>
-                    </ul>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-                    <ul class="quick-links nav">
+                    <a class="navbar-brand" href="/"><span class="muted">e</span>l<span class="muted">o</span>q<span class="muted">ue</span>nt.</a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="quick-links nav navbar-nav hidden-xs">
                         <li><a href="https://github.com/eloquent" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon"></i></a></li>
                         <li><a href="mailto:ezzatron@gmail.com" data-toggle="tooltip" title="Contact us"><i class="icon-envelope icon"></i></a></li>
                     </ul>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Projects</a></li>
+                        <li class="active"><a href="/about.html">About</a></li>
+                        <li class="visible-xs"><a href="https://github.com/eloquent">View on GitHub</a></li>
+                        <li class="visible-xs"><a href="mailto:ezzatron@gmail.com">Contact us</a></li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
 
-            <ul class="nav nav-tabs nav-stacked visible-phone">
-                <li><a href="/">Projects</a></li>
-                <li class="active"><a href="/about.html">About</a></li>
-            </ul>
-
-            <div class="hero-unit">
+            <div class="jumbotron">
                 <h1>Eloquent</h1>
 
                 <p>
@@ -74,8 +82,8 @@
             </div>
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="/js/eloquent.js"></script>
     </body>
 </html>
