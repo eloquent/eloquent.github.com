@@ -34,7 +34,7 @@ p + p {
 /* quick links */
 .navbar .quick-links {
     float: right;
-    margin-right: -10px;
+    margin-right: -5px;
 }
 .navbar .quick-links li a {
     padding-left: 10px;
