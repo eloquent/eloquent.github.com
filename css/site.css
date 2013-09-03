@@ -31,13 +31,15 @@ body {
 }
 
 /* project */
-.project h2 {
+.project h2,
+.project h3 {
     line-height: 1em;
     margin-top: 1.4em;
     padding-bottom: 8px;
     border-bottom: 1px solid #ccc;
 }
-.project h2 a {
+.project h2 a,
+.project h3 a {
     line-height: 1em;
 }
 @media (max-width: 767px) {
@@ -48,4 +50,17 @@ body {
 }
 .project .btn-group {
     margin-left: 10px;
+}
+.project .subproject {
+    padding-left: 30px;
+    max-width: 600px;
+}
+.project .subproject h3 {
+    padding-right: 100px;
+}
+.project .subproject h3 a {
+    color: #333;
+}
+.project .subproject .btn-group {
+    margin-top: -52px;
 }
