@@ -31,14 +31,19 @@ p + p {
     margin-top: 1em;
 }
 
-/* quick links */
-.navbar .quick-links {
-    float: right;
-    margin-right: -5px;
-}
-.navbar .quick-links li a {
+/* navbar spacing */
+.navbar {
     padding-left: 10px;
     padding-right: 10px;
+}
+.navbar .navbar-brand {
+    margin-right: 2px;
+}
+@media (max-width: 767px) {
+    .navbar {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 /* jumbotron */
