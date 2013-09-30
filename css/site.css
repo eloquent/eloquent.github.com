@@ -66,15 +66,29 @@ body {
 /* article */
 article header {
     margin-bottom: 60px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
+}
+@media (max-width: 767px) {
+    article header {
+        margin-bottom: 40px;
+        padding-bottom: 5px;
+    }
 }
 article header h1 {
     font-size: 63px;
 }
+article header h1 small {
+    display: block;
+    margin-top: 10px;
+    font-size: 30px;
+}
 @media (max-width: 767px) {
     article header h1 {
-        font-size: 40px;
+        font-size: 45px;
+    }
+    article header h1 small {
+        font-size: 20px;
     }
 }
 article h2 {
@@ -87,8 +101,4 @@ article h2 {
 }
 article .row p {
     font-size: 16px;
-}
-article header h1 small {
-    display: block;
-    margin-top: 10px;
 }

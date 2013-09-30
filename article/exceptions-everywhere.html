@@ -8,6 +8,7 @@
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/github.css" rel="stylesheet">
         <link href="/css/eloquent.css" rel="stylesheet">
         <link href="/css/site.css" rel="stylesheet">
 
@@ -75,14 +76,14 @@
                 </header>
 
                 <h2>What's this all about?</h2>
-                    <div class="row">
-                        <div class="col-sm-6">
+                    <!-- <div class="row">
+                        <div class="col-sm-6"> -->
                             <p>
                                 This article is an attempt to convince the reader that, in order for PHP to progress as a language, <strong>exceptions must become the <em>only</em> acceptable method for error handling</strong>.
                             </p>
                             <p>
-                                There has been a lot of discussion and focus in the PHP community on the issue of interoperability; especially with regards to the interoperability of frameworks and their components.
-                                The benefits of these efforts are perhaps most evident through the success of <a href="http://getcomposer.org/">Composer</a>; which has facilitated code re-use on a scale unprecedented in PHP's history.
+                                There has been a lot of discussion and focus in the PHP community on the issue of interoperability, especially with regards to the interoperability of frameworks and their components.
+                                The benefits of these efforts are perhaps most evident through the success of <a href="http://getcomposer.org/">Composer</a>, which has facilitated code re-use on a scale unprecedented in PHP's history.
                             </p>
                             <p>
                                 One area that is noticeably lacking in terms of standardization is error handling.
@@ -92,20 +93,161 @@
                             </p>
                             <p>
                                 To achieve true interoperability, a consensus needs to be reached on how the error handler can be expected to function.
-                                As it turns out, the only sensible answer is to use <a href="http://php.net/errorexception">error exceptions</a>.
+                                As it turns out, the only sensible answer is to use <a href="http://php.net/errorexception">error exceptions</a>, but we'll get to that later.
                             </p>
-                        </div>
+                        <!-- </div>
                         <div class="col-sm-6">
                             <div class="thumbnail">
                                 <a href="/img/article/exceptions-everywhere/php-vs-python.png">
                                     <img class="img-responsive" src="/img/article/exceptions-everywhere/php-vs-python.png" />
                                 </a>
                                 <div class="caption">
-                                    <em>Sadly, this is a fairly typical example of the PHP community's historical approach to error handling.</em>
+                                    <em>Sadly, this is a fairly typical example of the PHP community's historical attitude towards error handling.</em>
                                 </div>
                             </div>
                         </div>
+                    </div> -->
+
+                <h2>A few home truths</h2>
+                    <h3>Error 'severity' is a useless metric</h3>
+                        <p>
+                            PHP's native errors are assigned a 'severity' (notice, warning, error etc.) which is generally used to decide whether execution can continue in spite of the error.
+                            There are several things wrong with this:
+                        </p>
+                        <ul>
+                            <li>thing</li>
+                            <li>thing</li>
+                            <li>thing</li>
+                            <li>thing</li>
+                        </ul>
+                    <h3>Fatal errors are abused by PHP</h3>
+                        <p>Something about that.</p>
+                    <h3>Exceptions are superior</h3>
+                        <p>Something about that.</p>
+
+                    <!-- <div class="row">
+                        <div class="col-sm-4"> -->
+                            <!-- <h2>The complexities of error handler configuration</h2>
+                                <p>
+                                    There are two primary methods of error handler configuration: runtime configuration settings, and custom error handlers.
+                                    The two methods are <em>almost</em> completely independent.
+                                    Runtime configuration is generally only utilized by the default error handler, and almost exclusively ignored by custom handlers (unless the handler itself implements logic to handle them).
+                                </p>
+                                <p>
+
+                                </p>
+                                <h3>Runtime configuration</h3>
+                                    <p>
+                                        The behavior of the default error handler is influenced by a wide range of <a href="http://php.net/configuration">runtime configuration settings</a>.
+                                        These settings vary depending on the values defined in <a href="http://php.net/configuration.file">php.ini</a>, but can also be modified at run time via various functions such as <a href="http://php.net/ini_set">ini_set()</a>.
+                                    </p>
+                                    <h4>
+                                        <a href="http://php.net/error-reporting">error_reporting</a>
+                                    </h4>
+                                        <p>
+                                            Instructs the handler to ignore errors below a particular "severity".
+                                            Severity will be discussed in further detail soon.
+                                        </p>
+                                    <h4>
+                                        <a href="http://php.net/track-errors">track_errors</a>
+                                    </h4>
+                                        <p>
+                                            If enabled, the last error message is stored in a global variable.
+                                        </p>
+                                    <h4>
+                                        <a href="http://php.net/error-prepend-string">error_prepend_string</a> and
+                                        <a href="http://php.net/error-append-string">error_append_string</a>
+                                    </h4>
+                                        <p>
+                                            The handler will use these to prefix and/or suffix error messages.
+                                        </p>
+                                    <h4>
+                                        <a href="http://php.net/display-errors">display_errors</a>,
+                                        <a href="http://php.net/display-startup-errors">display_startup_errors</a>,
+                                        <a href="http://php.net/html-errors">html_errors</a>,
+                                        <a href="http://php.net/xmlrpc-errors">xmlrpc_errors</a>,
+                                        <a href="http://php.net/xmlrpc-error-number">xmlrpc_error_number</a>,
+                                        <a href="http://php.net/docref-root">docref_root</a>, and
+                                        <a href="http://php.net/docref-ext">docref_ext</a>
+                                    </h4>
+                                        <p>
+                                            These settings control whether the handler will output error messages directly to <code>stdout</code> (or <code>stderr</code>), and how these messages are formatted.
+                                        </p>
+                                    <h4>
+                                        <a href="http://php.net/log-errors">log_errors</a>,
+                                        <a href="http://php.net/error-log">error_log</a>,
+                                        <a href="http://php.net/log-errors-max-len">log_errors_max_len</a>,
+                                        <a href="http://php.net/ignore-repeated-errors">ignore_repeated_errors</a>, and
+                                        <a href="http://php.net/ignore-repeated-source">ignore_repeated_source</a>
+                                    </h4>
+                                        <p>
+                                            These settings control how, when, and where errors are logged.
+                                        </p>
+                                <h3>Custom error handlers</h3>
+                                    <p>
+                                        Custom handlers allow complete flexibility in how errors are handled.
+                                        Handlers must be installed at run time, and operate
+                                    </p> -->
+                        <!-- </div>
+                    </div> -->
+
+                <!-- <h2>The problem for library developers</h2>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p>
+                                Consider a library
+                            </p>
+                        </div>
+                        <div class="col-sm-8">
+                            <pre><code class="php">set_error_handler(
+    function ($severity, $message, $filename, $lineNumber) {
+        throw new ErrorException($message, 0, $severity, $filename, $lineNumber);
+    }
+);</code></pre>
+                        </div>
                     </div>
+
+                <h2>An error handler for all occasions</h2>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <pre><code class="php">set_error_handler(
+    function ($severity, $message, $filename, $lineNumber) {
+        throw new ErrorException($message, 0, $severity, $filename, $lineNumber);
+    }
+);</code></pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>
+                                This small snippet of code is, essentially the crux of the proposed solution to the problems raised in this article.
+                                It's operation is extremely simple, and its behavior is predictable and consistent.
+                            </p>
+                            <p>
+                                With this handler in place, <em>any</em> error of <em>any</em> severity will simply result in an <code>ErrorException</code> being thrown.
+                                This exception instance contains all of the pertinent information required to handle the error.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <pre><code class="php">try {
+    $data = file_get_contents('/path/to/file');
+} catch (ErrorException $e) {
+    // it's cool, relax, we've got this
+}
+
+try {
+    doSomethingDodgy();
+} catch (SomeUserException $e) {
+    // jimmies rustled
+}</code></pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>
+                                With such a handler installed, error handling becomes extremely simple.
+                                What's more, there's no longer a different strategy for handling PHP errors when compared to handling exceptions thrown by user-land code.
+                            </p>
+                        </div>
+                    </div> -->
 
                 <footer>
                     <p class="muted pull-right">Copyright &copy; 2013 <a href="http://ezzatron.com/">Erin Millard</a></p>
@@ -115,6 +257,7 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
         <script src="/js/eloquent.js"></script>
     </body>
 </html>
