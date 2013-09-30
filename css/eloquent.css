@@ -55,13 +55,13 @@ p + p {
 }
 
 /* footer */
-#footer {
+footer, #footer {
     clear: both;
     padding-top: 80px;
     color: #999;
 }
 @media (max-width: 767px) {
-    #footer {
+    footer, #footer {
         padding-top: 40px;
     }
 }

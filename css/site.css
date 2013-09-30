@@ -62,3 +62,33 @@ body {
 .project .subproject .btn-group {
     margin-top: -52px;
 }
+
+/* article */
+article header {
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+article header h1 {
+    font-size: 63px;
+}
+@media (max-width: 767px) {
+    article header h1 {
+        font-size: 40px;
+    }
+}
+article h2 {
+    font-size: 40px;
+}
+@media (max-width: 767px) {
+    article h2 {
+        font-size: 32px;
+    }
+}
+article .row p {
+    font-size: 16px;
+}
+article header h1 small {
+    display: block;
+    margin-top: 10px;
+}

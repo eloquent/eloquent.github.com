@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Eloquent - Eloquent Software</title>
+        <title>Exceptions everywhere: The case for exception-based error handling in PHP. - Eloquent Software</title>
 
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
@@ -45,16 +45,16 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="/">Projects</a></li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 Articles
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="/article/exceptions-everywhere.html">Exceptions everywhere</a></li>
+                                <li class="active"><a href="/article/exceptions-everywhere.html">Exceptions everywhere</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="/about.html">About</a></li>
+                        <li><a href="/about.html">About</a></li>
                         <li class="visible-xs"><a href="https://github.com/eloquent">View on GitHub</a></li>
                         <li class="visible-xs"><a href="mailto:ezzatron@gmail.com">Contact us</a></li>
                     </ul>
@@ -66,29 +66,51 @@
                 </div>
             </nav>
 
-            <div class="jumbotron">
-                <h1>Eloquent</h1>
+            <article>
+                <header>
+                    <h1>
+                        Exceptions everywhere
+                        <small>The case for exception-based error handling in PHP.</small>
+                    </h1>
+                </header>
 
-                <p>
-                    <strong>Eloquent Software</strong> is an organisation formed to produce <em>high-quality</em>
-                    software projects. Projects that stand on their own merits, fulfill a purpose, and express
-                    themselves with <em>eloquence</em>; that is, with simplicity, style, and power.
-                </p>
-                <p>
-                    Eloquent is primarily the brain child of myself (<a href="http://ezzatron.com/">Erin Millard</a>),
-                    an Australian software developer, currently living in
-                    <a href="http://en.wikipedia.org/wiki/Brisbane">Brisbane</a>.
-                </p>
-            </div>
+                <h2>What's this all about?</h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                This article is an attempt to convince the reader that, in order for PHP to progress as a language, <strong>exceptions must become the <em>only</em> acceptable method for error handling</strong>.
+                            </p>
+                            <p>
+                                There has been a lot of discussion and focus in the PHP community on the issue of interoperability; especially with regards to the interoperability of frameworks and their components.
+                                The benefits of these efforts are perhaps most evident through the success of <a href="http://getcomposer.org/">Composer</a>; which has facilitated code re-use on a scale unprecedented in PHP's history.
+                            </p>
+                            <p>
+                                One area that is noticeably lacking in terms of standardization is error handling.
+                                PHP's error handling is extremely configurable; it's even possible to configure whether or not a given error will halt program execution.
+                                For any given project or library, the code's error handling logic is always based upon an assumption about how the error handler is configured.
+                                This configurability is not only a roadblock to interoperability; it can lead to subtle, and sometimes dangerous bugs.
+                            </p>
+                            <p>
+                                To achieve true interoperability, a consensus needs to be reached on how the error handler can be expected to function.
+                                As it turns out, the only sensible answer is to use <a href="http://php.net/errorexception">error exceptions</a>.
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="thumbnail">
+                                <a href="/img/article/exceptions-everywhere/php-vs-python.png">
+                                    <img class="img-responsive" src="/img/article/exceptions-everywhere/php-vs-python.png" />
+                                </a>
+                                <div class="caption">
+                                    <em>Sadly, this is a fairly typical example of the PHP community's historical approach to error handling.</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <blockquote class="pull-right">
-                <p>The finest eloquence is that which gets things done.</p>
-                <small><cite data-toggle="tooltip" title="Opening speech at the Paris Peace Conference (January 1919)">David Lloyd George</cite></small>
-            </blockquote>
-
-            <div id="footer">
-                <p class="muted pull-right">Copyright &copy; 2013 <a href="http://ezzatron.com/">Erin Millard</a></p>
-            </div>
+                <footer>
+                    <p class="muted pull-right">Copyright &copy; 2013 <a href="http://ezzatron.com/">Erin Millard</a></p>
+                </footer>
+            </article>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
