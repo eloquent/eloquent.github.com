@@ -69,13 +69,21 @@
 
             <article>
                 <header>
-                    <h1>
+                    <h1 id="exceptions-everywhere">
+                        <a class="anchor" href="#exceptions-everywhere" tabindex="-1">
+                            <span class="icon-link icon"></span>
+                        </a>
                         Exceptions everywhere
                         <small>The case for exception-based error handling in PHP.</small>
                     </h1>
                 </header>
 
-                <h2>What's this all about?</h2>
+                <h2 id="whats-this-all-about">
+                    <a class="anchor" href="#whats-this-all-about" tabindex="-1">
+                        <span class="icon-link icon"></span>
+                    </a>
+                    What's this all about?
+                </h2>
                     <!-- <div class="row">
                         <div class="col-sm-6"> -->
                             <p>
@@ -107,6 +115,50 @@
                             </div>
                         </div>
                     </div> -->
+
+                <h2>Predictable error handling is a must-have</h2>
+                    <p>
+                        When it comes to error handling, application developers have a relatively easy time of it.
+                        Application developers generally have full control over the environment in which their code is executed.
+                    </p>
+                    <p>
+                        Library developers do not have the luxury of such control.
+                        In order to write a library that works with native functions, a library developer will usually make an assumption about the way in which errors will need to be handled.
+                        For example, the developer might assume that no error handler is installed, and use the following logic to read a file:
+                    </p>
+                    <pre><code class="php">$data = file_get_contents('/path/to/file');
+
+if (false === $data) {
+    throw new CustomReadException;
+}
+</code></pre>
+                    <p>Or perhaps, they might assume that an error handler is installed that will throw an <code>ErrorException</code> on error, and use this logic instead:</p>
+                    <pre><code class="php">try{
+    $data = file_get_contents('/path/to/file');
+} catch (ErrorException $e) {
+    throw new CustomReadException($e);
+}
+</code></pre>
+                    <p>But it takes a very dedicated and patient developer to correctly handle both possibilities simultaneously:</p>
+                    <pre><code class="php">$data = false;
+
+try{
+    $data = file_get_contents('/path/to/file');
+} catch (ErrorException $e) {
+    throw new CustomReadException($e);
+}
+
+if (false === $data) {
+    throw new CustomReadException;
+}
+</code></pre>
+                    <p>
+                        The above is a lot of code to write, to handle a very common use case.
+                        Once the error handling logic is multiplied by every piece of code in the library that requires error handling, it stops being tedious, and starts becoming ridiculous.
+                    </p>
+                    <p>
+                        This is the primary tenet
+                    </p>
 
                 <h2>A few home truths</h2>
                     <h3>Error 'severity' is a useless metric</h3>
