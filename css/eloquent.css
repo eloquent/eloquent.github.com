@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* anchor links */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     position: relative;
     margin-left: -30px;
     padding-left: 30px;
@@ -47,13 +47,17 @@ a.anchor:focus {
     text-decoration: none;
     outline: none;
 }
-h1:hover a.anchor > .icon,
 h2:hover a.anchor > .icon,
 h3:hover a.anchor > .icon,
 h4:hover a.anchor > .icon,
 h5:hover a.anchor > .icon,
 h6:hover a.anchor > .icon {
     display: inline;
+}
+@media (max-width: 999px) {
+    a.anchor {
+        display: none;
+    }
 }
 
 /* paragraph spacing */
@@ -94,4 +98,18 @@ footer, #footer {
     footer, #footer {
         padding-top: 40px;
     }
+}
+
+/* code */
+pre {
+    padding: 0;
+}
+pre code {
+    padding: 10px;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: pre;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }

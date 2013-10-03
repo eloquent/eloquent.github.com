@@ -36,6 +36,8 @@ body {
 /* project */
 .project h2,
 .project h3 {
+    margin-left: 0;
+    padding-left: 0;
     line-height: 1em;
     margin-top: 1.4em;
     padding-bottom: 8px;
@@ -70,18 +72,17 @@ body {
 
 /* article */
 article header {
-    margin-bottom: 60px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
 }
 @media (max-width: 767px) {
     article header {
         margin-bottom: 40px;
-        padding-bottom: 5px;
     }
 }
 article header h1 {
     font-size: 63px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
 }
 article header h1 small {
     display: block;
@@ -91,9 +92,23 @@ article header h1 small {
 @media (max-width: 767px) {
     article header h1 {
         font-size: 45px;
+        padding-bottom: 5px;
     }
     article header h1 small {
         font-size: 20px;
+    }
+}
+article header time {
+    display: block;
+    float: right;
+    margin-right: 20px;
+    font-size: 20px;
+    font-style: italic;
+    color: #ccc;
+}
+@media (max-width: 767px) {
+    article header time {
+        font-size: 16px;
     }
 }
 article h2 {
@@ -104,6 +119,19 @@ article h2 {
         font-size: 32px;
     }
 }
-article .row p {
+article h3 {
+    font-size: 30px;
+}
+@media (max-width: 767px) {
+    article h3 {
+        font-size: 22px;
+    }
+}
+article p {
     font-size: 16px;
+}
+@media (max-width: 767px) {
+    article p {
+        font-size: 14px;
+    }
 }
