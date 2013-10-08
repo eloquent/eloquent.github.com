@@ -82,47 +82,52 @@
                     </a>
                     What's this all about?
                 </h2>
-                    <!-- <div class="row">
-                        <div class="col-sm-6"> -->
-                            <p>
-                                This article is an attempt to convince the reader that, in order for PHP to progress as a language, <strong>exceptions must become the <em>only</em> acceptable method for error handling</strong>.
-                            </p>
-                            <p>
-                                There has been a lot of discussion and focus in the PHP community on the issue of interoperability, especially with regards to the interoperability of frameworks and their components.
-                                The benefits of these efforts are perhaps most evident through the success of <a href="http://getcomposer.org/">Composer</a>, which has facilitated code re-use on a scale unprecedented in PHP's history.
-                            </p>
-                            <p>
-                                One area that is noticeably lacking in terms of standardization is error handling.
-                                PHP's error handling is extremely configurable; it's even possible to configure whether or not a given error will halt program execution.
-                                For any given project or library, the code's error handling logic is always based upon an assumption about how the error handler is configured.
-                                This configurability is not only a roadblock to interoperability; it can lead to subtle, and sometimes dangerous bugs.
-                            </p>
-                            <p>
-                                To achieve true interoperability, a consensus needs to be reached on how the error handler can be expected to function.
-                                As it turns out, the only sensible answer is to use <a href="http://php.net/errorexception">error exceptions</a>, but we'll get to that later.
-                            </p>
-                        <!-- </div>
-                        <div class="col-sm-6">
-                            <div class="thumbnail">
-                                <a href="/img/article/exceptions-everywhere/php-vs-python.png">
-                                    <img class="img-responsive" src="/img/article/exceptions-everywhere/php-vs-python.png" />
-                                </a>
-                                <div class="caption">
-                                    <em>Sadly, this is a fairly typical example of the PHP community's historical attitude towards error handling.</em>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                    <p>
+                        This article is an attempt to convince the reader that, in order for PHP to progress as a language, <strong>exceptions must become the <em>only</em> acceptable method for error handling</strong>.
+                    </p>
+                    <p>
+                        There has been a lot of discussion and focus in the PHP community on the issue of interoperability, especially with regards to the interoperability of frameworks and their components.
+                        The benefits of these efforts are perhaps most evident through the success of <a href="http://getcomposer.org/">Composer</a>, which has facilitated code re-use on a scale unprecedented in PHP's history.
+                    </p>
+                    <p>
+                        One area that is noticeably lacking in terms of standardization is error handling.
+                        PHP's error handling is extremely configurable; it's even possible to configure whether or not a given error will halt program execution.
+                        For any given project or library, the code's error handling logic is always based upon an assumption about how the error handler is configured.
+                        This configurability is not only a roadblock to interoperability; it can lead to subtle, and sometimes dangerous bugs.
+                    </p>
+                    <p>
+                        To achieve true interoperability, a consensus needs to be reached on how the error handler can be expected to function.
+                        As it turns out, the only sensible answer is to use <a href="http://php.net/errorexception">error exceptions</a>, but we'll get to that later.
+                    </p>
 
-                <h2>Predictable error handling is a must-have</h2>
+                <h2 id="error-handling-and-interoperability">
+                    <a class="anchor" href="#error-handling-and-interoperability" tabindex="-1">
+                        <span class="icon-link icon"></span>
+                    </a>
+                    Error handling and interoperability
+                </h2>
+                    <p>
+                        Unpredictable error handling presents challenges for both the developer who uses a library, and for the library developer themselves.
+                        Library consumers, whilst they generally have control over the installed error handler, have no control over how the libraries they utilize will attempt to handle errors.
+                        Library developers, on the other hand, are hard-pressed to handle errors in such a way that works for any possible error handler that may be installed.
+                    </p>
+                    <p>
+                        To illustrate how bad the situation is for both parties, let's discuss some real-world situations involving code in common use.
+                    </p>
+                    <h3 id="error-handling-and-interoperability">
+                        <a class="anchor" href="#error-handling-and-interoperability" tabindex="-1">
+                            <span class="icon-link icon"></span>
+                        </a>
+                        Real world example: The Symfony Process component's use of @ suppression
+                    </h3>
                     <p>
                         When it comes to error handling, application developers have a relatively easy time of it.
                         Application developers generally have full control over the environment in which their code is executed.
                     </p>
                     <p>
                         Library developers do not have the luxury of such control.
-                        In order to write a library that works with native functions, a library developer will usually make an assumption about the way in which errors will need to be handled.
-                        For example, the developer might assume that no error handler is installed, and use the following logic to read a file:
+                        In order to write a library that works with native functions, the developer will usually make an assumption about the way in which errors will need to be handled.
+                        For example, they might assume that no error handler is installed, and use the following logic to read a file:
                     </p>
                     <pre><code class="php">$data = file_get_contents('/path/to/file');
 
@@ -131,7 +136,7 @@ if (false === $data) {
 }
 </code></pre>
                     <p>Or perhaps, they might assume that an error handler is installed that will throw an <code>ErrorException</code> on error, and use this logic instead:</p>
-                    <pre><code class="php">try{
+                    <pre><code class="php">try {
     $data = file_get_contents('/path/to/file');
 } catch (ErrorException $e) {
     throw new CustomReadException($e);
@@ -140,7 +145,7 @@ if (false === $data) {
                     <p>But it takes a very dedicated and patient developer to correctly handle both possibilities simultaneously:</p>
                     <pre><code class="php">$data = false;
 
-try{
+try {
     $data = file_get_contents('/path/to/file');
 } catch (ErrorException $e) {
     throw new CustomReadException($e);
@@ -155,8 +160,16 @@ if (false === $data) {
                         Once the error handling logic is multiplied by every piece of code in the library that requires error handling, it stops being tedious, and starts becoming ridiculous.
                     </p>
                     <p>
-                        This is the primary tenet
+                        This problem stems directly from the fact that there is no formal standard for error handling.
+                        The current climate for PHP library developers is unpredictable, which in itself is a bad thing; but what's worse is that this issue can lead to deeper, more dangerous issues, which we'll discuss in the next section.
                     </p>
+
+                <h2 id="unpredictable-error-handling-is-dangerous">
+                    <a class="anchor" href="#unpredictable-error-handling-is-dangerous" tabindex="-1">
+                        <span class="icon-link icon"></span>
+                    </a>
+                    Unpredictable error handling is dangerous
+                </h2>
 
                 <h2>A few home truths</h2>
                     <h3>Error 'severity' is a useless metric</h3>
@@ -174,6 +187,9 @@ if (false === $data) {
                         <p>Something about that.</p>
                     <h3>Exceptions are superior</h3>
                         <p>Something about that.</p>
+                    <h3>@ suppression is an evil cunt</h3>
+                        <p>Something about that.</p>
+
 
                     <!-- <div class="row">
                         <div class="col-sm-4"> -->
