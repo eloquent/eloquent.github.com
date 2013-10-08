@@ -26,6 +26,40 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
 }
 
+/* anchor links */
+h2, h3, h4, h5, h6 {
+    position: relative;
+    margin-left: -30px;
+    padding-left: 30px;
+}
+a.anchor {
+    position: absolute;
+    top: .25em;
+    margin-left: -1.25em;
+    font-size: .75em;
+    color: #999;
+}
+a.anchor > .icon {
+    display: none;
+}
+a.anchor:hover,
+a.anchor:focus {
+    text-decoration: none;
+    outline: none;
+}
+h2:hover a.anchor > .icon,
+h3:hover a.anchor > .icon,
+h4:hover a.anchor > .icon,
+h5:hover a.anchor > .icon,
+h6:hover a.anchor > .icon {
+    display: inline;
+}
+@media (max-width: 999px) {
+    a.anchor {
+        display: none;
+    }
+}
+
 /* paragraph spacing */
 p + p {
     margin-top: 1em;
@@ -55,13 +89,27 @@ p + p {
 }
 
 /* footer */
-#footer {
+footer, #footer {
     clear: both;
     padding-top: 80px;
     color: #999;
 }
 @media (max-width: 767px) {
-    #footer {
+    footer, #footer {
         padding-top: 40px;
     }
+}
+
+/* code */
+pre {
+    padding: 0;
+}
+pre code {
+    padding: 10px;
+    word-break: normal;
+    word-wrap: normal;
+    white-space: pre;
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
