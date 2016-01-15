@@ -24,4 +24,14 @@ Promise.join(
 
         riot.mount('github-repository-list', {repositories: starredRepositories});
     }
+)
+.catch(
+    function (error) {
+        var repositoryList = document.querySelector('github-repository-list p')
+
+        repositoryList.classList.add('error');
+        repositoryList.innerHTML =
+            'Sorry, something went wrong; probably rate limiting. ' +
+            'Try <a href="https://github.com/eloquent">GitHub</a> instead.';
+    }
 );
