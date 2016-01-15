@@ -1,7 +1,7 @@
 <github-repository-list>
     <ul>
         <li class="repository" each={repositories}>
-            <strong><a href="{homepage ? homepage : html_url}">{name}</a></strong>: {description}
+            <strong><a href="{homepage ? homepage : html_url}">{name}</a></strong> - {description}
         </li>
     </ul>
 
