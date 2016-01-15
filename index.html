@@ -1,374 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
 
-        <title>Projects - Eloquent Software</title>
+    <title>Eloquent Software</title>
 
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/eloquent.css" rel="stylesheet">
-        <link href="/css/site.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/markdown.css">
+    <link rel="stylesheet" href="css/eloquent.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Inconsolata">
 
-        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
-    </head>
-    <body>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-touch-icon-144x144.png">
+</head>
+<body class="markdown-body">
+    <div id="container">
+        <div id="content">
+            <h1>Eloquent Software</h1>
 
-            ga('create', 'UA-41826908-1', 'eloquent-software.com');
-            ga('send', 'pageview');
-        </script>
+            <h2>About</h2>
 
-        <div class="container">
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+            <p>
+                <em>Eloquent Software</em> provides free, high-quality, open-source software components and
+                applications for public use. These projects are the result of many crazy ideas, sleepless nights,
+                intense discussions, and hard working people. We hope you find them useful.
+            </p>
 
-                    <a class="navbar-brand" href="/"><span class="muted">e</span>l<span class="muted">o</span>q<span class="muted">ue</span>nt.</a>
-                </div>
+            <h2>Projects</h2>
 
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Projects</a></li>
-                        <li><a href="/about.html">About</a></li>
-                        <li class="visible-xs"><a href="https://github.com/eloquent">View on GitHub</a></li>
-                        <li class="visible-xs"><a href="mailto:ezzatron@gmail.com">Contact us</a></li>
-                    </ul>
+            <github-repository-list>
+                <p>Loading GitHub data...</p>
+            </github-repository-list>
 
-                    <ul class="nav navbar-nav navbar-right hidden-xs">
-                        <li><a href="https://github.com/eloquent" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon"></i></a></li>
-                        <li><a href="mailto:ezzatron@gmail.com" data-toggle="tooltip" title="Contact us"><i class="icon-envelope icon"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
+            <h2>Contact @ezzatron</h2>
 
-            <div class="jumbotron">
-                <h1>Projects</h1>
-                <p>
-                    <strong>Eloquent Software</strong> provides <em>free</em>, <em>high-quality</em>,
-                    <em>open-source</em> software components and applications for public use. These projects are the
-                    result of many crazy ideas, sleepless nights, intense discussions, and hard working people. We hope
-                    you find them useful.
-                </p>
-            </div>
-
-            <div id="project-asplode" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/asplode#readme">Asplode</a>
-                    <small>Drop-in exception-based error handling for PHP.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/asplode#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/asplode/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Asplode</em> is very simple library that sets up an
-                    <a href="http://php.net/set_error_handler">error handler</a> to throw
-                    <a href="http://php.net/ErrorException">ErrorException</a> exceptions instead of using the default
-                    PHP error handler.
-                </p>
-            </div>
-
-            <div id="project-dumpling" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/dumpling#readme">Dumpling</a>
-                    <small>Diff-friendly mysqldump with an improved interface.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/dumpling#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/dumpling/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Dumpling</em> is a wrapper for
-                    <a href="http://dev.mysql.com/doc/refman/5.7/en/mysqldump.html">mysqldump</a> that uses sensible
-                    defaults, and provides a streamlined interface. <em>Dumpling</em> is designed to be as intuitive and
-                    simple to use as possible.
-                </p>
-            </div>
-
-            <div id="project-composer-config-reader" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/composer-config-reader#readme">Composer configuration reader</a>
-                    <small>A light-weight component for reading Composer configuration files.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/composer-config-reader#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/composer-config-reader/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Composer configuration reader</em> provides a light-weight component for reading
-                    <a href="http://getcomposer.org/">Composer</a> configuration files. It is intended for use when
-                    including the entire Composer package as a dependency is overkill for the needs of a system.
-                </p>
-            </div>
-
-            <div id="project-composer-npm-bridge" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/composer-npm-bridge#readme">Composer NPM bridge</a>
-                    <small>NPM integration for Composer packages.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/composer-npm-bridge#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    The <em>Composer NPM bridge</em> allows installation and updating of
-                    <a href="https://npmjs.org/">NPM</a> modules via the <a href="http://getcomposer.org/">Composer</a>
-                    command line interface. This allows Composer packages to bring in NPM dependencies in a similar
-                    fashion to regular Composer dependencies. The bridge uses NPM's
-                    <a href="https://npmjs.org/doc/shrinkwrap.html">shrinkwrap</a> system to achieve similar
-                    functionality to Composer's
-                    <a href="http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file">lock files</a>.
-                </p>
-            </div>
-
-            <div id="project-cosmos" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/cosmos#readme">Cosmos</a>
-                    <small>A library for representing and manipulating PHP class names.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/cosmos#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Cosmos</em> is a library for representing and manipulating PHP class names. It includes a
-                    <code>ClassName</code> object, as well as tools to help in resolving class names against a set of
-                    <code>namespace</code> and <code>use</code> statements.
-                </p>
-            </div>
-
-            <div id="project-enumeration" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/enumeration#readme">Enumeration</a>
-                    <small>An enumeration implementation for PHP.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/enumeration#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/enumeration/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    In terms of software development, an enumeration (or "enumerated type") is essentially a fixed
-                    set of values. These values are called "members" or "elements". An enumeration is used in
-                    circumstances where it is desirable to allow an argument to be only one of a particular set of
-                    values, and where anything else is considered invalid.
-                </p>
-            </div>
-
-            <div id="project-equality" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/equality#readme">Equality</a>
-                    <small>A better strict comparison for PHP.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/equality#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Equality</em> is a library for comparing PHP values in a deep and strict manner, without
-                    requiring object values to be the exact same instance.
-                </p>
-            </div>
-
-            <div id="project-fixie" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/fixie#readme">Fixie</a>
-                    <small>YAML-based data fixtures.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/fixie#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Fixie</em> is a format for storing tabular data. It blends the strengths of
-                    <a href="http://yaml.org/">YAML</a> and
-                    <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV</a> to produce a syntax that is
-                    well suited for both human and machine readers. The <em>Fixie</em> syntax is actually a subset of
-                    <a href="http://www.yaml.org/spec/1.2/spec.html">YAML 1.2</a>, meaning that any given example of
-                    <em>Fixie</em> syntax is also perfectly valid YAML. Unlike free-form YAML however, all
-                    <em>Fixie</em> variants can be read row-by-row, which allows for minimal memory usage when reading
-                    large amounts of data.
-                </p>
-            </div>
-
-            <div id="project-liberator" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/liberator#readme">Liberator</a>
-                    <small>A proxy for circumventing PHP access modifier restrictions.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/liberator#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Liberator</em> is an object proxy that allows you to access methods and properties of an object
-                    or class that would normally be restricted by PHP. Essentially, this means you ignore any 'private'
-                    or 'protected' keywords. <em>Liberator</em>'s primary use is as a testing tool. Unit tests can often
-                    be simplified using a mix of partially mocked objects and <em>Liberator</em>. <em>Liberator</em> is
-                    based upon the <a href="https://github.com/eloquent/pops">Pops</a> object proxy system.
-                </p>
-            </div>
-
-            <div id="project-liftoff" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/liftoff#readme">Liftoff</a>
-                    <small>Open any file or URI using the default GUI application from within PHP.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/liftoff#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/liftoff/liftoff" data-toggle="tooltip" title="Download the executable"><i class="icon-download icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/liftoff/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Liftoff</em> provides a simple interface to launch a file or URI in the host operating system's
-                    default application, in a cross-platform manner. <em>Liftoff</em> can be used, for example, to
-                    launch a HTML page in the operating system's default browser from within a command line PHP
-                    application.
-                </p>
-            </div>
-
-            <div id="project-lockbox" class="project">
-                <h2>
-                    <a href="http://lqnt.co/lockbox">Lockbox</a>
-                    <small>Simple, strong encryption.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/lockbox" data-toggle="tooltip" title="View the website"><i class="icon-external-link-sign icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/lockbox#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Lockbox</em> is the simplest possible way to implement strong, two-way, public-key encryption for use in applications.
-                    <em>Lockbox</em> uses a combination of well-established technologies to ensure the safety of data.
-                    <em>Lockbox</em> libraries exist for multiple languages; see the <a href="http://lqnt.co/lockbox"><em>Lockbox</em> website</a> for more information.
-                </p>
-            </div>
-
-            <div id="project-mooch" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/mooch#readme">Mooch</a>
-                    <small>A simple Twitter OAuth proxy.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/mooch#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Mooch</em> is a simple app designed to allow unauthenticated access to the
-                    <a href="https://dev.twitter.com/docs/api">Twitter API</a> for web apps that have no server-side
-                    components. <em>Mooch</em> is designed to be deployed as a
-                    <a href="https://www.heroku.com/">Heroku</a> app, which makes deployment of a new <em>Mooch</em>
-                    service extremely simple.
-                </p>
-            </div>
-
-            <div id="project-otis" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/otis#readme">Otis</a>
-                    <small>One-time password / two-factor authentication library for PHP.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/otis#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/otis/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Otis</em> is a PHP library for implementing
-                    <a href="http://en.wikipedia.org/wiki/One-time_password">one-time password</a> /
-                    <a href="http://en.wikipedia.org/wiki/Multi-factor_authentication">two-factor authentication</a>
-                    systems. <em>Otis</em> provides generators and validators for both
-                    <a href="http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm">TOTP</a> (time-based
-                    passwords as defined in <a href="http://tools.ietf.org/html/rfc6238">RFC 6238</a>) and
-                    <a href="http://en.wikipedia.org/wiki/HMAC-based_One-time_Password_Algorithm">HOTP</a>
-                    (counter-based passwords as covered in <a href="http://tools.ietf.org/html/rfc4226">RFC 4226</a>).
-                    <em>Otis</em> supports all hashing algorithms (SHA-1, SHA-256, SHA-512).
-                </p>
-            </div>
-
-            <div id="project-pathogen" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/pathogen#readme">Pathogen</a>
-                    <small>General-purpose path library for PHP.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/pathogen#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/pathogen/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Pathogen</em> is a library for path manipulation. <em>Pathogen</em> supports file system paths
-                    including Unix and Windows style paths, but is truly a general-purpose path implementation, capable
-                    of representing URI paths and other path-like structures while providing a comprehensive API.
-                </p>
-            </div>
-
-            <div id="project-pbkdf2-compat" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/pbkdf2-compat#readme">PBKDF2-compat</a>
-                    <small>A compatibility library for the PHP 5.5 function hash_pbkdf2().</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/pbkdf2-compat#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    This library provides a forwards-compatible implementation of the
-                    <a href="http://php.net/hash_pbkdf2">hash_pbkdf2()</a> function introduced in PHP 5.5. It allows the
-                    use of this function in versions of PHP prior to 5.5, and falls back to the native function when it
-                    is available.
-                </p>
-            </div>
-
-            <div id="project-pops" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/pops#readme">Pops</a>
-                    <small>PHP object proxy system.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/pops#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                    <a class="btn btn-default btn-sm" href="http://lqnt.co/pops/artifacts/documentation/api/" data-toggle="tooltip" title="Read the API"><i class="icon-book icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Pops</em> is a system for wrapping PHP objects in other objects to modify their behaviour. A
-                    <em>Pops</em> proxy will, as much as possible, imitate the object it wraps. It passes along method
-                    calls and returns the underlying result, and allows transparent access to properties (for both
-                    setting and getting). <em>Pops</em> is the underlying system behind
-                    <a href="https://github.com/eloquent/liberator">Liberator</a>.
-                </p>
-            </div>
-
-            <div id="project-typhax" class="project">
-                <h2>
-                    <a href="https://github.com/eloquent/typhax#readme">Typhax</a>
-                    <small>A flexible PHP type hinting syntax.</small>
-                </h2>
-                <div class="btn-group pull-right">
-                    <a class="btn btn-default btn-sm" href="https://github.com/eloquent/typhax#readme" data-toggle="tooltip" title="View on GitHub"><i class="icon-github icon-large"></i></a>
-                </div>
-                <p>
-                    <em>Typhax</em> is a standard for the specification of PHP types in parameter type hints, and
-                    anywhere a type needs to be described in a human-readable form. It expands on the capabilities of
-                    existing conventions for specifying type requirements, such as those used in the
-                    <a href="http://php.net/manual/en/language.types.php">PHP documentation</a> and PHPDoc's
-                    <a href="http://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_tags.param.pkg.html">@param</a>
-                    tag. In addition to scalar and class type hints, <em>Typhax</em> allows powerful features, including
-                    the specification of key and value types for arrays, as well as compound types that use boolean
-                    logic (e.g. integer|float).
-                </p>
-            </div>
-
-            <div id="footer">
-                <p class="muted pull-right">Copyright &copy; 2013 <a href="http://ezzatron.com/">Erin Millard</a></p>
-            </div>
+            <ul>
+                <li><a href="mailto:ezzatron@gmail.com">Email</a></li>
+                <li><a href="https://github.com/ezzatron">GitHub</a></li>
+                <li><a href="https://twitter.com/ezzatron">Twitter</a></li>
+            </ul>
         </div>
+    </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="/js/eloquent.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/bluebird/3.1.1/bluebird.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gh.js/2.4.1/gh.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/riot/2.3/riot+compiler.min.js"></script>
+
+    <script type="riot/tag" src="tag/github-repository-list.tag"></script>
+    <script src="js/eloquent.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-41826908-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
 </html>
