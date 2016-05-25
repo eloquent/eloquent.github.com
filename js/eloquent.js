@@ -12,13 +12,13 @@ Promise.join(
         var repositoryNames = {};
         var starredRepositories = [];
 
-        for (let star of stars) {
-           repositoryNames[star.full_name] = true;
+        for (var i = 0; i < stars.length; ++i) {
+           repositoryNames[stars[i].full_name] = true;
         }
 
-        for (let repository of repositories) {
-            if (repositoryNames[repository.full_name]) {
-                starredRepositories.push(repository);
+        for (var i = 0; i < repositories.length; ++i) {
+            if (repositoryNames[repositories[i].full_name]) {
+                starredRepositories.push(repositories[i]);
             }
         }
 
